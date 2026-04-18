@@ -1,0 +1,323 @@
+---
+import '../styles/global.css';
+---
+
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Alex Klar — Comedian aus Wien</title>
+    <meta name="description" content="Früher stand er vor der Tür. Jetzt steht er auf der Bühne. Niemand kommt mehr rein ohne zu lachen." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+
+    <!-- NAV -->
+    <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-5 transition-all duration-300">
+      <span class="bebas text-2xl text-white tracking-widest mix-blend-difference">Alex Klar</span>
+
+      <!-- Desktop links -->
+      <ul class="hidden md:flex gap-10 text-sm font-medium text-white uppercase tracking-widest mix-blend-difference">
+        <li><a href="#about" class="hover:opacity-60 transition-opacity">Über mich</a></li>
+        <li><a href="#shows" class="hover:opacity-60 transition-opacity">Shows</a></li>
+        <li><a href="#videos" class="hover:opacity-60 transition-opacity">Videos</a></li>
+        <li><a href="#booking" class="hover:opacity-60 transition-opacity">Booking</a></li>
+      </ul>
+
+      <!-- Hamburger button (mobile) -->
+      <button id="menu-btn" aria-label="Menü öffnen" class="md:hidden flex flex-col gap-1.5 p-2 z-60 relative mix-blend-difference">
+        <span class="menu-bar block w-7 h-0.5 bg-white transition-all duration-300 origin-center"></span>
+        <span class="menu-bar block w-7 h-0.5 bg-white transition-all duration-300"></span>
+        <span class="menu-bar block w-7 h-0.5 bg-white transition-all duration-300 origin-center"></span>
+      </button>
+    </nav>
+
+    <!-- Mobile menu overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-40 bg-black flex flex-col items-center justify-center gap-10 translate-x-full transition-transform duration-400 ease-in-out md:hidden">
+      <ul class="flex flex-col items-center gap-8 text-center">
+        <li><a href="#about" class="mobile-link bebas text-6xl text-white tracking-widest hover:text-[#FFE500] transition-colors">Über mich</a></li>
+        <li><a href="#shows" class="mobile-link bebas text-6xl text-white tracking-widest hover:text-[#FFE500] transition-colors">Shows</a></li>
+        <li><a href="#videos" class="mobile-link bebas text-6xl text-white tracking-widest hover:text-[#FFE500] transition-colors">Videos</a></li>
+        <li><a href="#booking" class="mobile-link bebas text-6xl text-[#FFE500] tracking-widest hover:text-white transition-colors">Booking</a></li>
+      </ul>
+      <div class="flex gap-10 text-sm text-gray-400 uppercase tracking-widest mt-8">
+        <a href="#" class="hover:text-white transition-colors">TikTok</a>
+        <a href="#" class="hover:text-white transition-colors">Instagram</a>
+        <a href="#" class="hover:text-white transition-colors">YouTube</a>
+      </div>
+    </div>
+
+    <!-- HERO -->
+    <section id="hero" class="relative w-full h-screen overflow-hidden bg-[#FFE500]">
+      <canvas id="hero-canvas" class="absolute inset-0 w-full h-full"></canvas>
+
+      <!-- Social links right -->
+      <div class="absolute right-8 bottom-16 flex flex-col gap-5 text-sm font-medium text-black uppercase tracking-widest z-10">
+        <a href="#" class="hover:opacity-50 transition-opacity">TikTok</a>
+        <a href="#" class="hover:opacity-50 transition-opacity">Instagram</a>
+        <a href="#" class="hover:opacity-50 transition-opacity">YouTube</a>
+      </div>
+
+      <!-- Hero content -->
+      <div class="absolute inset-0 flex flex-col justify-end pb-20 px-8 md:px-16 z-10 max-w-xl">
+        <h1 class="bebas text-[clamp(5rem,14vw,11rem)] leading-none text-black mb-6 tracking-tight">
+          Alex<br />Klar
+        </h1>
+        <p class="text-black text-lg md:text-xl font-medium mb-10 leading-snug max-w-xs">
+          Früher stand er vor der Tür.<br />
+          Jetzt steht er auf der Bühne.<br />
+          Niemand kommt mehr rein ohne zu lachen.
+        </p>
+        <div class="flex gap-4 flex-wrap">
+          <a href="#shows" class="bg-black text-[#FFE500] bebas text-xl px-8 py-3 tracking-widest hover:bg-[#111] transition-colors">
+            Termine
+          </a>
+          <a href="#booking" class="border-2 border-black text-black bebas text-xl px-8 py-3 tracking-widest hover:bg-black hover:text-[#FFE500] transition-colors">
+            Booking anfragen
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-32 px-8 md:px-16 max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div>
+          <p class="text-[#FFE500] bebas text-lg tracking-widest mb-4">Über Alex Klar</p>
+          <h2 class="bebas text-6xl md:text-7xl leading-none mb-8">
+            Er kannte beide<br />Seiten der Tür
+          </h2>
+          <p class="text-gray-300 text-lg leading-relaxed mb-6">
+            Alex Klar arbeitete Jahre als Türsteher in Wiens härtesten Clubs. Er hat alles gesehen — die Ausreden, die Dramen, die Verzweifelten um 3 Uhr früh. Jetzt erzählt er davon. Auf der Bühne.
+          </p>
+          <p class="text-gray-300 text-lg leading-relaxed">
+            Sein Comedy steht zwischen den Kulturen, zwischen den Welten — und er hält die Tür weit offen für jeden, der lachen will.
+          </p>
+        </div>
+
+        <!-- Quote card -->
+        <div class="border-2 border-[#FFE500] p-10 relative">
+          <div class="bebas text-8xl text-[#FFE500] leading-none mb-4 opacity-30 absolute -top-6 left-8">"</div>
+          <p class="text-2xl md:text-3xl font-medium leading-snug relative z-10">
+            Einlassprotokoll:<br />
+            <span class="text-[#FFE500]">Lachen</span> — Ja.<br />
+            Schlechte Witze — Nein.<br />
+            Alex Klar — Immer.
+          </p>
+          <div class="mt-8 pt-8 border-t border-gray-700">
+            <p class="text-gray-400 text-sm uppercase tracking-widest">Türsteher-Protokoll, 2019</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SHOWS -->
+    <section id="shows" class="py-32 bg-[#111]">
+      <div class="px-8 md:px-16 max-w-6xl mx-auto">
+        <p class="text-[#FFE500] bebas text-lg tracking-widest mb-4">Upcoming</p>
+        <h2 class="bebas text-6xl md:text-7xl leading-none mb-16">Shows</h2>
+
+        <div class="divide-y divide-gray-800">
+          {[
+            { date: '03 Mai', venue: 'WUK Wien', city: 'Wien', status: 'Tickets' },
+            { date: '10 Mai', venue: 'Rabenhof Theater', city: 'Wien', status: 'Ausverkauft' },
+            { date: '17 Mai', venue: 'Stadtsaal', city: 'Wien', status: 'Tickets' },
+            { date: '24 Mai', venue: 'Posthof', city: 'Linz', status: 'Tickets' },
+            { date: '07 Jun', venue: 'Orpheum', city: 'Graz', status: 'Tickets' },
+          ].map(show => (
+            <div class="flex items-center justify-between py-7 group">
+              <div class="flex items-center gap-8">
+                <span class="bebas text-3xl text-[#FFE500] w-24">{show.date}</span>
+                <div>
+                  <p class="font-semibold text-lg">{show.venue}</p>
+                  <p class="text-gray-400 text-sm uppercase tracking-widest">{show.city}</p>
+                </div>
+              </div>
+              {show.status === 'Ausverkauft' ? (
+                <span class="border border-gray-600 text-gray-500 bebas text-sm px-5 py-2 tracking-widest">Ausverkauft</span>
+              ) : (
+                <a href="#" class="border border-[#FFE500] text-[#FFE500] bebas text-sm px-5 py-2 tracking-widest hover:bg-[#FFE500] hover:text-black transition-colors">
+                  {show.status}
+                </a>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDEOS -->
+    <section id="videos" class="py-32 px-8 md:px-16 max-w-6xl mx-auto">
+      <p class="text-[#FFE500] bebas text-lg tracking-widest mb-4">Clips</p>
+      <h2 class="bebas text-6xl md:text-7xl leading-none mb-16">Videos</h2>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        {[
+          { title: 'Die Würstelstand-Theorie', duration: '4:32' },
+          { title: 'Wo bist du wirklich her?', duration: '6:17' },
+          { title: 'Kein Zutritt — außer du lachst', duration: '3:48' },
+          { title: 'Wien um 4 Uhr früh', duration: '5:03' },
+          { title: 'Der Dress-Code-Monolog', duration: '7:21' },
+          { title: 'Homeoffice Security', duration: '2:59' },
+        ].map(video => (
+          <a href="#" class="group block border border-gray-800 hover:border-[#FFE500] transition-colors">
+            <div class="aspect-video bg-[#111] relative overflow-hidden flex items-center justify-center">
+              <div class="w-14 h-14 border-2 border-[#FFE500] rounded-full flex items-center justify-center group-hover:bg-[#FFE500] transition-colors">
+                <svg class="w-5 h-5 text-[#FFE500] group-hover:text-black ml-1 transition-colors" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/>
+                </svg>
+              </div>
+            </div>
+            <div class="p-5 flex items-start justify-between gap-4">
+              <p class="font-medium leading-snug">{video.title}</p>
+              <span class="text-gray-500 text-sm shrink-0 mt-0.5">{video.duration}</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- BOOKING -->
+    <section id="booking" class="py-32 bg-[#FFE500]">
+      <div class="px-8 md:px-16 max-w-4xl mx-auto">
+        <p class="text-black bebas text-lg tracking-widest mb-4">Kontakt</p>
+        <h2 class="bebas text-6xl md:text-7xl leading-none text-black mb-4">Booking</h2>
+        <p class="text-black/70 text-lg mb-16 max-w-md">
+          Corporate Events, Comedy-Clubs, Festivals — kein Auftritt zu groß, keiner zu klein. Außer Open-Mics. Die Zeit ist vorbei.
+        </p>
+
+        <form class="grid md:grid-cols-2 gap-6">
+          <div class="flex flex-col gap-2">
+            <label class="text-black text-sm font-semibold uppercase tracking-widest">Name</label>
+            <input type="text" class="bg-black text-white px-5 py-4 border-2 border-transparent focus:border-black focus:bg-black outline-none w-full" placeholder="Dein Name" />
+          </div>
+          <div class="flex flex-col gap-2">
+            <label class="text-black text-sm font-semibold uppercase tracking-widest">E-Mail</label>
+            <input type="email" class="bg-black text-white px-5 py-4 border-2 border-transparent focus:border-black outline-none w-full" placeholder="deine@email.com" />
+          </div>
+          <div class="flex flex-col gap-2">
+            <label class="text-black text-sm font-semibold uppercase tracking-widest">Art des Events</label>
+            <select class="bg-black text-white px-5 py-4 border-2 border-transparent focus:border-black outline-none w-full appearance-none">
+              <option value="">Bitte wählen</option>
+              <option>Corporate Event</option>
+              <option>Comedy-Club</option>
+              <option>Festival</option>
+              <option>Privatveranstaltung</option>
+              <option>Sonstiges</option>
+            </select>
+          </div>
+          <div class="flex flex-col gap-2">
+            <label class="text-black text-sm font-semibold uppercase tracking-widest">Datum (ungefähr)</label>
+            <input type="text" class="bg-black text-white px-5 py-4 border-2 border-transparent focus:border-black outline-none w-full" placeholder="z.B. Juni 2025" />
+          </div>
+          <div class="flex flex-col gap-2 md:col-span-2">
+            <label class="text-black text-sm font-semibold uppercase tracking-widest">Nachricht</label>
+            <textarea rows="5" class="bg-black text-white px-5 py-4 border-2 border-transparent focus:border-black outline-none w-full resize-none" placeholder="Erzähl mir von deiner Veranstaltung..."></textarea>
+          </div>
+          <div class="md:col-span-2">
+            <button type="submit" class="bg-black text-[#FFE500] bebas text-xl px-12 py-4 tracking-widest hover:bg-[#111] transition-colors">
+              Anfrage senden
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-12 px-8 md:px-16 flex flex-col md:flex-row items-center justify-between gap-6 border-t border-gray-900">
+      <span class="bebas text-2xl text-[#FFE500] tracking-widest">Alex Klar</span>
+      <div class="flex gap-8 text-sm text-gray-500 uppercase tracking-widest">
+        <a href="#" class="hover:text-white transition-colors">TikTok</a>
+        <a href="#" class="hover:text-white transition-colors">Instagram</a>
+        <a href="#" class="hover:text-white transition-colors">YouTube</a>
+      </div>
+      <p class="text-gray-600 text-sm">© 2025 Alex Klar. Kein Zutritt für schlechte Witze.</p>
+    </footer>
+
+    <!-- MOBILE NAV -->
+    <script>
+      const btn = document.getElementById('menu-btn')!;
+      const menu = document.getElementById('mobile-menu')!;
+      const bars = document.querySelectorAll<HTMLElement>('.menu-bar');
+      let open = false;
+
+      function toggleMenu() {
+        open = !open;
+        menu.style.transform = open ? 'translateX(0)' : 'translateX(100%)';
+        document.body.style.overflow = open ? 'hidden' : '';
+        // Animate to X
+        bars[0].style.transform = open ? 'translateY(8px) rotate(45deg)' : '';
+        bars[1].style.opacity = open ? '0' : '1';
+        bars[2].style.transform = open ? 'translateY(-8px) rotate(-45deg)' : '';
+      }
+
+      btn.addEventListener('click', toggleMenu);
+      document.querySelectorAll('.mobile-link').forEach(link => {
+        link.addEventListener('click', () => { if (open) toggleMenu(); });
+      });
+
+      // Scroll: darken nav after hero
+      const nav = document.getElementById('main-nav')!;
+      window.addEventListener('scroll', () => {
+        nav.style.background = window.scrollY > 60 ? 'rgba(10,10,10,0.95)' : '';
+        nav.style.backdropFilter = window.scrollY > 60 ? 'blur(8px)' : '';
+      });
+    </script>
+
+    <!-- HERO CANVAS ANIMATION -->
+    <script>
+      const canvas = document.getElementById('hero-canvas') as HTMLCanvasElement;
+      const ctx = canvas.getContext('2d')!;
+
+      let width: number, height: number;
+      let time = 0;
+
+      function resize() {
+        width = canvas.width = canvas.offsetWidth;
+        height = canvas.height = canvas.offsetHeight;
+      }
+
+      function noise(x: number, y: number, t: number): number {
+        return (
+          Math.sin(x * 0.008 + t * 0.4) * 0.4 +
+          Math.sin(y * 0.006 - t * 0.3) * 0.3 +
+          Math.sin((x + y) * 0.005 + t * 0.5) * 0.3
+        );
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, width, height);
+
+        const lineCount = 28;
+        const spacing = height / lineCount;
+
+        ctx.lineWidth = 2.5;
+        ctx.strokeStyle = 'rgba(0,0,0,0.18)';
+
+        for (let i = 0; i <= lineCount; i++) {
+          const baseY = i * spacing;
+          ctx.beginPath();
+
+          for (let x = 0; x <= width; x += 4) {
+            const n = noise(x, baseY, time);
+            const y = baseY + n * spacing * 1.1;
+            if (x === 0) ctx.moveTo(x, y);
+            else ctx.lineTo(x, y);
+          }
+          ctx.stroke();
+        }
+
+        time += 0.012;
+        requestAnimationFrame(draw);
+      }
+
+      window.addEventListener('resize', resize);
+      resize();
+      draw();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+:root {
+  --yellow: #FFE500;
+  --black: #0A0A0A;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--black);
+  color: white;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+.bebas {
+  font-family: 'Bebas Neue', sans-serif;
+}
